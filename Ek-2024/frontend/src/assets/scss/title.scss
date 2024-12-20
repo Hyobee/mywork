@@ -1,0 +1,63 @@
+.page-title {
+    font-size: rem(32);
+    font-weight: 600;
+
+    @include bp(tablet) {
+        font-size: $font-4xl; // -- 38px
+    }
+    @include bp(desktop-lg) {
+        font-size: $font-6xl; // -- 50px
+        letter-spacing:-2px;
+        line-height:1.25;
+    }
+}
+
+.page-sub-title {
+    font-size: $font-4xl; // -- 38px
+    font-weight: 600;
+
+    @include bp(desktop) {
+        font-size: $font-7xl; // -- 54px
+    }
+}
+
+.page-sub-title-bold {
+    font-size: $font-3xl; // -- 30px
+    font-weight:600;
+    letter-spacing:-1.5px;
+
+    @include bp(desktop) {
+        font-size: $font-4xl; // -- 38px
+    }
+}
+
+.page-sub {
+    font-size: rem(18);
+    font-weight:400;
+    letter-spacing:-1px;
+
+    @include bp(desktop-lg) {
+        font-size: $font-lg; // -- 20px
+    }
+}
+
+.page-group-sub {
+    font-size: rem(20);
+    font-weight:400;
+    letter-spacing:-1.5px;
+
+    @include bp(desktop) {
+        font-size: $font-2xl; // -- 24px
+        line-height:1.4;
+    }
+}
+
+.page-group-title {
+    font-size: rem(24);
+    font-weight:600;
+    letter-spacing:-1.5px;
+
+    @include bp(desktop) {
+        font-size: $font-3xl; // -- 30px
+    }
+}

@@ -1,0 +1,125 @@
+/*
+ * Buttons
+ */
+
+/*
+ * Base styles
+------------------------------------------------ */
+
+.btn {
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-weight: 500;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+/*
+ * Alternate buttons
+ * Options: primary, success, warning, danger, secondary
+ * Usage: @include btn-alternate($color, $background-color)
+------------------------------------------------ */
+.btn-primary {
+    @include btn-alternate(#fff, $primary);
+}
+
+.btn-success {
+    @include btn-alternate(#fff, $success);
+}
+
+.btn-warning {
+    @include btn-alternate(#fff, $warning);
+}
+
+.btn-danger {
+    @include btn-alternate(#fff, $failure);
+}
+
+.btn-secondary {
+    @include btn-alternate(#000, $secondary);
+}
+
+.btn-dark {
+    @include btn-alternate(#fff, $dark);
+}
+
+/*
+ * Outline buttons
+ * Options: primary, success, warning, danger, secondary
+ * Usage: @include btn-outline($color)
+------------------------------------------------ */
+.btn-primary-outline {
+    @include btn-outline($primary);
+}
+
+.btn-success-outline {
+    @include btn-outline($success);
+}
+
+.btn-warning-outline {
+    @include btn-outline($warning);
+}
+
+.btn-danger-outline {
+    @include btn-outline($failure);
+}
+
+.btn-secondary-outline {
+    color: $dark-200;
+    border-color: $dark-50;
+
+    &:hover {
+        color: #fff;
+        background-color: $primary;
+    }
+}
+
+/*
+ * Button Sizes
+ * Options: glant, large, medium, small, xsmall
+ * Usage: @include btn-size($font-size, $padding);
+------------------------------------------------ */
+.btn-gl {
+    @include btn-size(rem(20), rem(14) rem(30));
+}
+
+.btn-lg {
+    @include btn-size(rem(18), rem(10) rem(27));
+}
+
+.btn-md {
+    @include btn-size(rem(16), rem(8) rem(15));
+}
+
+.btn-sm {
+    @include btn-size(rem(14), rem(8) rem(20));
+}
+
+.btn-xs {
+    @include btn-size(rem(12), rem(7) rem(15));
+}
+
+/*
+ * button round
+------------------------------------------------ */
+.btn-round {
+    border-radius: 5px;
+}
+.btn-round-full{
+    border-radius:50px;
+}
+/*
+* Block button
+------------------------------------------------ */
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+    margin-top: rem(5);
+}

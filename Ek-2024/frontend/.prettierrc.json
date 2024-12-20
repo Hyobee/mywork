@@ -1,0 +1,38 @@
+{
+    "endOfLine": "auto",
+    "htmlWhitespaceSensitivity": "css",
+    "semi": true,
+    "singleQuote": false,
+    "useTabs": false,
+    "tabWidth": 4,
+    "bracketSpacing": true,
+    "printWidth": 80,
+    "overrides": [
+        {
+            "files": "src/**/*.vue",
+            "options": {
+                "tabWidth": 2,
+                "printWidth": 150
+            }
+        },
+        {
+            "files": "pages/**/*.html",
+            "options": {
+                "printWidth": 200,
+                "tabWidth": 2
+            }
+        },
+        {
+            "files": "docker-compose-local.yml",
+            "options": {
+                "tabWidth": 2
+            }
+        },
+        {
+            "files": "vite.config.lib.ts",
+            "options": {
+                "printWidth": 120
+            }
+        }
+    ]
+}

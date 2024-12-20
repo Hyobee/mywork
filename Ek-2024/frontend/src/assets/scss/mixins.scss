@@ -1,0 +1,199 @@
+/*
+ * mixins
+ */
+
+/*
+ * Breakpoint
+ * Options: xs, sm, md, lg, xl, xxl
+ * Usage: @include bp(mobile-lg);
+------------------------------------------------ */
+
+@mixin bp($point) {
+    @if $point == mobile-xs {
+        @media (min-width: $breakpoints-2xs) {
+            // 320px~
+            @content;
+        }
+    } @else if $point == mobile {
+        // 390px~
+        @media (min-width: $breakpoints-xs) {
+            @content;
+        }
+    } @else if $point == mobile-lg {
+        // 576px~
+        @media (min-width: $breakpoints-sm) {
+            @content;
+        }
+    } @else if $point == tablet {
+        // 768px~
+        @media (min-width: $breakpoints-md) {
+            @content;
+        }
+    } @else if $point == tablet-lg {
+        // 992px~
+        @media (min-width: $breakpoints-lg) {
+            @content;
+        }
+    } @else if $point == desktop {
+        // 1024px~
+        @media (min-width: $breakpoints-xl) {
+            @content;
+        }
+    } @else if $point == desktop-lg {
+        // 1320px~
+        @media (min-width: $breakpoints-2xl) {
+            @content;
+        }
+    }
+}
+
+/*
+ * functions
+ */
+
+/*
+ * Function to convert px value into rem
+ * USAGE: body { margin: rem(20); }
+------------------------------------------------ */
+
+@function rem($value) {
+    $rem-value: calc($value / 16) + rem;
+    @return $rem-value;
+}
+
+/*
+ * Text
+ */
+
+/*
+ * 한 줄 자르기
+ * Usage: @include text-truncate;
+------------------------------------------------ */
+
+@mixin text-truncate {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*
+ * 여러 줄 자르기 스타일 (multiline)
+ * Usage: @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
+------------------------------------------------------------- */
+
+@mixin multi-line-ellipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
+    position: relative;
+    max-height: $lineHeight * $lineCount;
+    padding-right: 1em;
+    margin-right: -1em;
+    overflow: hidden;
+    line-height: $lineHeight;
+    text-align: justify;
+
+    &::before {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        content: "...";
+    }
+
+    &::after {
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        content: "";
+        background: $bgColor;
+    }
+}
+
+@mixin ellipsis($line: 1) {
+    @if $line == 1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-wrap: break-word; // 공백 없을때 글자 잘림 방지
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+}
+
+/*
+ * Buttons
+ */
+
+/*
+ * Button Sizes
+ * Options: glant, large, medium, small, xsmall
+ * usage: @include btn-size($font-size, $padding);
+------------------------------------------------ */
+
+@mixin btn-size($font-size, $padding) {
+    font-size: $font-size;
+    padding: $padding;
+}
+
+/*
+ * Alternate buttons
+ * Options: primary, success, warning, danger, secondary
+ * Usage: @include btn-alternate($color, $background-color);
+------------------------------------------------------------- */
+
+@mixin btn-alternate($color, $background-color) {
+    position: relative;
+    color: $color;
+    background-color: $background-color;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: rgb(255 255 255 / 20%);
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(255 255 255 / 20%);
+        }
+    }
+}
+
+/*
+ * Outline buttons
+ * Options: primary, success, warning, danger, secondary
+ * Usage: @include btn-outline($color);
+------------------------------------------------------------- */
+@mixin btn-outline($color) {
+    position: relative;
+    color: $color;
+    background-color: #fff;
+    border-color: $color;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: #fff;
+        background-color: $color;
+    }
+}
+
+/*
+ * Background
+  * Usage: @include bg(https:www.naver.com)
+ */
+
+@mixin bg($bg-url, $bg-position: center, $bg-size: cover) {
+    background-image: url($bg-url);
+    background-repeat: no-repeat;
+    background-position: $bg-position;
+    background-size: $bg-size;
+}

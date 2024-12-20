@@ -1,0 +1,28 @@
+[
+    {
+        "name": "24년 NEW 키드키즈",
+        "description": null,
+        "href": null,
+        "target_blank": false,
+        "bold": true,
+        "new": false,
+        "hot": false,
+        "text_color_hex": "#ff0000",
+        "bg_color_hex": "#ffff00",
+        "children": [
+            {
+                "name": "베베TV",
+                "description": "영어, 재미 모두를 다잡았다!",
+                "href": "https://kidkids.net",
+                "target_blank": false,
+                "bold": true,
+                "new": false,
+                "hot": false,
+                "text_color_hex": "#ff0000",
+                "bg_color_hex": "#ffff00"
+            },
+            {}
+        ]
+    },
+    {}
+]

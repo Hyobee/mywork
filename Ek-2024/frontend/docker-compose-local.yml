@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: local
+    image: kidkids/mall/pani/node:20.11.0-alpione
+    container_name: mall-pani-local
+    restart: always
+    ports:
+      - "12085:3000"
+    volumes:
+      - .:/app
+    command: 'sh -c "npm install && pm2-runtime \"npm run dev\" --name \"pani\""'
+    networks:
+      - mall-pani
+
+networks:
+  mall-pani:
+    driver: bridge

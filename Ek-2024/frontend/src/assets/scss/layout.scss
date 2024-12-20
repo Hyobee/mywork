@@ -1,0 +1,38 @@
+/*
+ * Layout
+ */
+
+// Body
+// --------------------------------------------------
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    color: $default-300;
+    font-size: 14px;
+    font-weight: 400;
+
+    @include bp(tablet) {
+        font-size: 15px;
+    }
+
+    @include bp(desktop) {
+        font-size: 16px;
+    }
+}
+.container{
+    padding:0 rem(30);
+    @include bp(desktop-lg){
+        padding:0;
+    }
+}
+.pdcommon{
+    margin:rem(50) 0 rem(40);
+    @include bp(tablet){
+        margin:rem(110) 0 rem(60);
+    }
+}

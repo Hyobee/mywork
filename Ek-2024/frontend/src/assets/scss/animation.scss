@@ -1,0 +1,55 @@
+/*
+ * Animation
+ */
+
+/*
+ * fadeIn
+ * Usage: animation: fade-in 0.5s forwards;
+----------------------------------------------- */
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*
+* fadeOut
+* Usage: animation: fade-out 0.5s forwards;
+----------------------------------------------- */
+
+.fade-out {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/*
+* scaleUp
+* Usage(5초 뒤에 2초 동안 실행): animation: scaleUp 2s 5s forwards;
+----------------------------------------------- */
+@keyframes bg-scale-down {
+    0% {
+        background-size: 150%;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}
